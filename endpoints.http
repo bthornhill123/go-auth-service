@@ -1,0 +1,25 @@
+### Registers user if email is not in system
+POST http://localhost:8000/register
+content-type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "funfun123"
+}
+
+### Attempts to login with credentials and returns JWT on success
+POST http://localhost:8000/login
+content-type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "funfun123"
+}
+
+### Removes JWT token from client's cookie storage
+POST http://localhost:8000/logout
+content-type: application/json
+
+### Ensures client's request contains valid JWT token
+POST http://localhost:8000/authenticate
+content-type: application/json
